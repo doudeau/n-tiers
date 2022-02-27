@@ -11,3 +11,5 @@ Django, Ajax, sqlite3
 ```
 python manage.py runserver
 ```
+##Video
+video-n-tiers_LrlPMMrv.mp4
