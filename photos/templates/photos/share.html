@@ -81,9 +81,9 @@
             </button>
         </form>
 
-        <form id="post-form" method="POST" action="" enctype="multipart/form-data">
+        <form id="post-form2" method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
-            <input id="move" type="hidden" name="move" value="2" />
+            <input id="move2" type="hidden" name="move2" value="2" />
             <button class="carousel-control-next" type="submit">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
@@ -133,6 +133,23 @@
             url : "/postSharePhoto",
             data :{
                 move:$('#move').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function(data){
+                
+            }
+            
+        });
+    })
+
+    $(document).on('submit','#post-form2',function(e){
+        e.preventDefault();
+
+        $.ajax({
+            type:'POST',
+            url : "/postSharePhoto",
+            data :{
+                move:$('#move2').val(),
                 csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
             },
             success: function(data){
